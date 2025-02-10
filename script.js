@@ -189,6 +189,7 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
   const navLinks = document.querySelector('.nav-links');
+  const body = document.body;
 
   mobileMenuBtn.addEventListener('click', function() {
     navLinks.classList.toggle('active');
@@ -196,6 +197,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const icon = this.querySelector('i');
     icon.classList.toggle('fa-bars');
     icon.classList.toggle('fa-times');
+    // 메뉴가 열렸을 때 스크롤 방지
+    body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
   });
 
   // 메뉴 항목 클릭시 자동으로 닫기
@@ -205,6 +208,7 @@ document.addEventListener('DOMContentLoaded', function() {
       const icon = mobileMenuBtn.querySelector('i');
       icon.classList.add('fa-bars');
       icon.classList.remove('fa-times');
+      body.style.overflow = '';
     }
   });
 });
