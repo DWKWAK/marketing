@@ -185,28 +185,26 @@ document.addEventListener('DOMContentLoaded', function() {
   initTestimonialsSlider();
 });
 
-// 타이핑 효과 반복
-function resetTypingAnimation() {
-  const typingText = document.querySelector('.typing-text');
-  const cursor = document.querySelector('.cursor');
-  
-  if (typingText && cursor) {
-    typingText.style.animation = 'none';
-    cursor.style.animation = 'none';
-    
-    // Force reflow
-    void typingText.offsetWidth;
-    void cursor.offsetWidth;
-    
-    typingText.style.animation = 'typing 2s steps(20)';
-    cursor.style.animation = 'blink 0.7s infinite';
-  }
-}
-
-// 페이지 로드 시 애니메이션 시작
+// 모바일 메뉴 토글
 document.addEventListener('DOMContentLoaded', function() {
-  // 기존 초기화 코드...
-  
-  // 5초마다 타이핑 애니메이션 재시작
-  setInterval(resetTypingAnimation, 5000);
+  const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+  const navLinks = document.querySelector('.nav-links');
+
+  mobileMenuBtn.addEventListener('click', function() {
+    navLinks.classList.toggle('active');
+    // 메뉴 아이콘 변경
+    const icon = this.querySelector('i');
+    icon.classList.toggle('fa-bars');
+    icon.classList.toggle('fa-times');
+  });
+
+  // 메뉴 항목 클릭시 자동으로 닫기
+  navLinks.addEventListener('click', function(e) {
+    if (e.target.tagName === 'A') {
+      navLinks.classList.remove('active');
+      const icon = mobileMenuBtn.querySelector('i');
+      icon.classList.add('fa-bars');
+      icon.classList.remove('fa-times');
+    }
+  });
 });
