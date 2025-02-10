@@ -3,23 +3,22 @@ body {
     margin: 0;
     padding: 0;
     font-family: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, system-ui, Roboto, "Helvetica Neue", "Segoe UI", "Apple SD Gothic Neo", "Noto Sans KR", "Malgun Gothic", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", sans-serif;
-} 
     line-height: 1.6;
     color: #333;
     background-color: #f9f9f9;
-  }
-  
-  .container {
+}
+
+.container {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
     padding-left: 24px;
     padding-right: 24px;
     box-sizing: border-box;
-  }
-  
-  /* 네비게이션 */
-  .main-nav {
+}
+
+/* 1. 기본 네비게이션 */
+.main-nav {
     position: fixed;
     top: 0;
     left: 0;
@@ -29,105 +28,116 @@ body {
     z-index: 1000;
     padding: 1rem 0;
     box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-  }
-  .main-nav .container {
+}
+
+.main-nav .container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 24px;
-  }
-  .logo {
+    box-sizing: border-box;
+}
+
+/* 2. 로고 */
+.logo {
     font-size: 1.8rem;
     font-weight: 700;
     color: #333;
     text-decoration: none;
-    white-space: nowrap;
-  }
-  .nav-links {
+    transition: all 0.3s ease;
+}
+
+.logo:hover {
+    color: #0066cc;
+}
+
+/* 3. PC 메뉴 */
+.nav-links {
     display: flex;
     align-items: center;
-    gap: 1.8rem;
-  }
-  .nav-links a {
+    gap: 3rem;
+}
+
+.nav-menu-items {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.nav-links a {
     color: #333;
     text-decoration: none;
     font-weight: 500;
+    font-size: 1.05rem;
     transition: all 0.3s ease;
-  }
-  .nav-links a:hover {
+}
+
+.nav-links a:hover {
     color: #0066cc;
-  }
-  .nav-cta {
+}
+
+/* 4. 카카오톡 버튼 */
+.nav-cta {
     background: #FEE500;
-    color: #3A1D1D;
-    padding: 0.5rem 1.2rem;
-    border-radius: 20px;
+    color: #000;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
     font-weight: 600;
-    box-shadow: 0 4px 12px rgba(254, 229, 0, 0.2);
-    border: 1px solid rgba(0, 0, 0, 0.05);
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    transition: all 0.3s ease;
-  }
-  
-  .nav-cta::before {
-    content: '\f075';  /* FontAwesome 카카오톡 아이콘 */
-    font-family: 'Font Awesome 6 Free';
-    font-weight: 900;
-    font-size: 0.9em;
-  }
-  
-  .nav-cta:hover {
+    box-shadow: 0 4px 15px rgba(254, 229, 0, 0.25);
+}
+
+.nav-cta:hover {
     background: #FFE812;
     transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(254, 229, 0, 0.4);
-  }
-  
-  /* 헤더 */
-  .header {
+}
+
+/* 헤더 */
+.header {
     background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)),
       url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') no-repeat center center/cover;
     color: #fff;
     padding: 180px 0 100px;
     position: relative;
-  }
-  .header-content {
+}
+.header-content {
     position: relative;
     z-index: 2;
     max-width: 800px;
     margin: 0 auto;
     padding: 0 20px;
     text-align: center;
-  }
-  .subtitle {
+}
+.subtitle {
     font-size: 1rem;
     font-weight: 600;
     letter-spacing: 1.5px;
     margin-bottom: 1rem;
     display: block;
-  }
-  .header h1 {
+}
+.header h1 {
     font-size: 2.8em;
     margin-bottom: 20px;
     line-height: 1.4;
     text-align: center;
     padding: 0 20px;
     word-break: keep-all;
-  }
-  .header h1 span {
+}
+.header h1 span {
     display: block;
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 0.8s ease forwards;
-  }
-  .header h1 span:first-child {
+}
+.header h1 span:first-child {
     animation-delay: 0.3s;
-  }
-  .header h1 span:last-child {
+}
+.header h1 span:last-child {
     animation-delay: 0.6s;
-  }
-  @keyframes fadeInUp {
+}
+@keyframes fadeInUp {
     from {
       opacity: 0;
       transform: translateY(20px);
@@ -136,12 +146,12 @@ body {
       opacity: 1;
       transform: translateY(0);
     }
-  }
-  .header p {
+}
+.header p {
     font-size: 1.2em;
     margin-bottom: 30px;
-  }
-  .btn {
+}
+.btn {
     display: inline-block;
     background: #0066cc;
     color: #fff;
@@ -150,26 +160,26 @@ body {
     border-radius: 25px;
     transition: all 0.4s ease;
     font-weight: 500;
-  }
-  .btn:hover {
+}
+.btn:hover {
     transform: translateY(-3px);
     background: #0077ed;
     box-shadow: 0 10px 20px rgba(0,102,204,0.1);
-  }
-  
-  /* 섹션 헤더 */
-  .section-header {
+}
+
+/* 섹션 헤더 */
+.section-header {
     text-align: center;
     margin-bottom: 60px;
-  }
-  .section-header h2 {
+}
+.section-header h2 {
     font-size: 2.5em;
     color: #333;
     margin-bottom: 20px;
     position: relative;
     padding-bottom: 15px;
-  }
-  .section-header h2::after {
+}
+.section-header h2::after {
     content: '';
     position: absolute;
     bottom: 0;
@@ -178,77 +188,77 @@ body {
     width: 60px;
     height: 3px;
     background: #0066cc;
-  }
-  .section-tag {
+}
+.section-tag {
     font-size: 0.9rem;
     font-weight: 600;
     color: #0066cc;
     letter-spacing: 1.5px;
     margin-bottom: 1rem;
     display: block;
-  }
-  
-  .section-header.light h2 {
+}
+
+.section-header.light h2 {
     color: #fff;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-  }
-  
-  .section-header.light .section-tag {
+}
+
+.section-header.light .section-tag {
     color: rgba(255, 255, 255, 0.9);
-  }
-  
-  .section-header.light .section-description {
+}
+
+.section-header.light .section-description {
     color: rgba(255, 255, 255, 0.9);
-  }
-  
-  /* 서비스 섹션 */
-  .services {
+}
+
+/* 서비스 섹션 */
+.services {
     background: #fff;
     padding: 100px 0;
-  }
-  .service-items {
+}
+.service-items {
     display: flex;
     flex-wrap: wrap;
     gap: 30px;
     margin: 60px auto 0;
     max-width: 1200px;
     padding: 0 24px;
-  }
-  .service-item {
+}
+.service-item {
     flex: 1 1 calc(50% - 40px);
     min-width: 320px;
     transition: transform 0.3s ease;
-  }
-  .service-item:hover {
+}
+.service-item:hover {
     transform: translateY(-5px);
-  }
-  .service-item-content {
+}
+.service-item-content {
     background: #fff;
     border-radius: 20px;
     overflow: hidden;
     box-shadow: 0 15px 40px rgba(0,0,0,0.05);
     display: flex;
     flex-direction: column;
-  }
-  .service-image {
+}
+.service-image {
     position: relative;
     width: 100%;
     height: 200px;
     overflow: hidden;
     background: linear-gradient(45deg, #0066cc, #00c2ff);
-  }
-  .service-image img {
+}
+.service-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     transition: transform 0.3s ease;
     opacity: 0.8;
     mix-blend-mode: overlay;
-  }
-  .service-image:hover img {
+}
+.service-image:hover img {
     transform: scale(1.05);
-  }
-  .service-image::before {
+}
+.service-image::before {
     content: '';
     position: absolute;
     top: 0;
@@ -262,15 +272,15 @@ body {
     );
     z-index: 1;
     transition: all 0.3s ease;
-  }
-  .service-image:hover::before {
+}
+.service-image:hover::before {
     background: linear-gradient(
       to bottom,
       rgba(0, 102, 204, 0.1),
       rgba(0, 194, 255, 0.2)
     );
-  }
-  .service-icon {
+}
+.service-icon {
     position: absolute;
     bottom: 20px;
     right: 20px;
@@ -288,8 +298,8 @@ body {
     box-shadow: 0 5px 15px rgba(0, 102, 204, 0.15);
     overflow: hidden;
     position: relative;
-  }
-  .service-icon::before {
+}
+.service-icon::before {
     content: '';
     position: absolute;
     top: 0;
@@ -299,61 +309,61 @@ body {
     background: linear-gradient(135deg, #0066cc, #00c2ff);
     opacity: 0;
     transition: all 0.3s ease;
-  }
-  .service-icon i {
+}
+.service-icon i {
     position: relative;
     z-index: 1;
     transition: all 0.3s ease;
-  }
-  .service-icon:hover {
+}
+.service-icon:hover {
     transform: scale(1.15);
     box-shadow: 0 8px 25px rgba(0, 102, 204, 0.25);
-  }
-  .service-icon:hover::before {
+}
+.service-icon:hover::before {
     opacity: 1;
-  }
-  .service-icon:hover i {
+}
+.service-icon:hover i {
     color: #fff;
-  }
-  .service-text {
+}
+.service-text {
     padding: 20px 30px 30px;
-  }
-  .service-text h3 {
+}
+.service-text h3 {
     font-size: 1.8em;
     margin: 5px 0 15px;
     color: #333;
-  }
-  .service-text p {
+}
+.service-text p {
     font-size: 1em;
     color: #666;
     margin-bottom: 20px;
-  }
-  .service-stats {
+}
+.service-stats {
     display: flex;
     align-items: center;
     gap: 10px;
     border-top: 1px solid #eee;
     padding-top: 15px;
-  }
-  .stat-highlight {
+}
+.stat-highlight {
     font-size: 1.1em;
     font-weight: 600;
     color: #0066cc;
     background: rgba(0,102,204,0.1);
     padding: 5px 15px;
     border-radius: 20px;
-  }
-  
-  /* 성공 사례 섹션 */
-  .success {
+}
+
+/* 성공 사례 섹션 */
+.success {
     background: linear-gradient(135deg, #0066cc, #00c2ff);
     color: #fff;
     padding: 100px 0;
-  }
-  .success .section-header {
+}
+.success .section-header {
     margin-bottom: 60px;
-  }
-  .success-stats {
+}
+.success-stats {
     display: flex;
     gap: 40px;
     align-items: center;
@@ -362,8 +372,8 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 0 40px;
-  }
-  .graph-container {
+}
+.graph-container {
     flex: 1;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
@@ -371,25 +381,25 @@ body {
     padding: 30px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     margin-right: 20px;
-  }
-  .graph-header {
+}
+.graph-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 20px;
-  }
-  .graph-header h3 {
+}
+.graph-header h3 {
     font-size: 1.4em;
     margin: 0;
     color: #fff;
-  }
-  .success-stats p {
+}
+.success-stats p {
     flex: 0 0 40%;
     font-size: 1.1em;
     line-height: 1.8;
     padding: 0 0 0 20px;
-  }
-  .success-stats strong {
+}
+.success-stats strong {
     color: #ffffff;
     font-weight: 700;
     background: linear-gradient(135deg, #0066cc, #00c2ff);
@@ -398,107 +408,107 @@ body {
     margin: 0 2px;
     display: inline-block;
     box-shadow: 0 2px 10px rgba(0, 102, 204, 0.3);
-  }
-  @media (max-width: 768px) {
+}
+@media (max-width: 768px) {
     .success {
-      padding: 60px 0;
+        padding: 60px 0;
     }
     .success-stats {
-      flex-direction: column;
-      gap: 25px;
-      margin-top: 30px;
-      padding: 0 20px;
+        flex-direction: column;
+        gap: 25px;
+        margin-top: 30px;
+        padding: 0 20px;
     }
     .graph-container {
-      padding: 25px 20px;
-      width: 100%;
-      box-sizing: border-box;
-      margin-right: 0;
+        padding: 25px 20px;
+        width: 100%;
+        box-sizing: border-box;
+        margin-right: 0;
     }
     .graph-header {
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 8px;
-      margin-bottom: 15px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+        margin-bottom: 15px;
     }
     .graph-header h3 {
-      font-size: 1.4em;
-      margin-bottom: 5px;
+        font-size: 1.4em;
+        margin-bottom: 5px;
     }
     .graph-legend {
-      font-size: 0.9em;
-      opacity: 0.8;
+        font-size: 0.9em;
+        opacity: 0.8;
     }
     .graph-bars {
-      gap: 15px;
-      margin-top: 20px;
+        gap: 15px;
+        margin-top: 20px;
     }
     .graph-bar {
-      min-height: 200px;
+        min-height: 200px;
     }
     .bar-value {
-      font-size: 1em;
-      font-weight: 600;
-      margin-bottom: 5px;
+        font-size: 1em;
+        font-weight: 600;
+        margin-bottom: 5px;
     }
     .bar-label {
-      font-size: 0.9em;
-      opacity: 0.9;
+        font-size: 0.9em;
+        opacity: 0.9;
     }
     .success-stats p {
-      flex: 1;
-      padding: 5px 0;
-      font-size: 1em;
-      line-height: 1.7;
-      word-break: keep-all;
-      text-align: left;
+        flex: 1;
+        padding: 5px 0;
+        font-size: 1em;
+        line-height: 1.7;
+        word-break: keep-all;
+        text-align: left;
     }
     .success-stats p strong {
-      font-size: 1em;
-      padding: 2px 8px;
-      margin: 0 1px;
+        font-size: 1em;
+        padding: 2px 8px;
+        margin: 0 1px;
     }
     .success-stats p br {
-      display: block;
-      content: "";
-      margin: 10px 0;
+        display: block;
+        content: "";
+        margin: 10px 0;
     }
-  }
-  @media (max-width: 480px) {
+}
+@media (max-width: 480px) {
     .success-stats {
-      padding: 0 16px;
+        padding: 0 16px;
     }
     .graph-container {
-      padding: 20px;
-      border-radius: 15px;
+        padding: 20px;
+        border-radius: 15px;
     }
     .graph-header h3 {
-      font-size: 1.3em;
+        font-size: 1.3em;
     }
     .graph-bars {
-      gap: 12px;
-      margin-top: 15px;
+        gap: 12px;
+        margin-top: 15px;
     }
     .graph-bar {
-      min-height: 160px;
+        min-height: 160px;
     }
     .success-stats p {
-      font-size: 0.95em;
-      padding: 2px 6px;
+        font-size: 0.95em;
+        padding: 2px 6px;
     }
     .success-stats p strong {
-      font-size: 0.95em;
-      padding: 2px 6px;
+        font-size: 0.95em;
+        padding: 2px 6px;
     }
-  }
-  
-  /* 가격 섹션 */
-  .pricing {
+}
+
+/* 가격 섹션 */
+.pricing {
     background: #f1f1f1;
     padding: 80px 0;
-  }
-  
-  .pricing-cards {
+}
+
+.pricing-cards {
     display: flex;
     gap: 30px;
     justify-content: center;
@@ -507,9 +517,9 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 0 20px;
-  }
-  
-  .pricing-card {
+}
+
+.pricing-card {
     flex: 1;
     max-width: 350px;
     background: #fff;
@@ -519,15 +529,15 @@ body {
     transition: all 0.3s ease;
     position: relative;
     box-shadow: 0 15px 40px rgba(0, 0, 0, 0.05);
-  }
-  
-  .pricing-card.featured {
+}
+
+.pricing-card.featured {
     transform: scale(1.05);
     border: 2px solid #0066cc;
     z-index: 1;
-  }
-  
-  .pricing-badge {
+}
+
+.pricing-badge {
     position: absolute;
     top: -15px;
     right: 20px;
@@ -537,9 +547,9 @@ body {
     border-radius: 20px;
     font-size: 0.9em;
     font-weight: 600;
-  }
-  
-  .pricing-icon {
+}
+
+.pricing-icon {
     width: 70px;
     height: 70px;
     background: rgba(0,102,204,0.1);
@@ -551,71 +561,71 @@ body {
     font-size: 1.8em;
     color: #0066cc;
     transition: all 0.3s ease;
-  }
-  
-  .pricing-card:hover {
+}
+
+.pricing-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-  }
-  
-  .pricing-card:hover .pricing-icon {
+}
+
+.pricing-card:hover .pricing-icon {
     transform: rotate(360deg);
     background: #0066cc;
     color: #fff;
-  }
-  
-  .pricing-card h3 {
+}
+
+.pricing-card h3 {
     margin-bottom: 20px;
     font-size: 1.8em;
     color: #333;
-  }
-  
-  .pricing-price {
+}
+
+.pricing-price {
     margin: 30px 0;
     color: #333;
-  }
-  
-  .price {
+}
+
+.price {
     font-size: 3em;
     font-weight: 700;
     color: #0066cc;
-  }
-  
-  .custom-price {
+}
+
+.custom-price {
     font-size: 2em;
     font-weight: 600;
     color: #0066cc;
-  }
-  
-  .unit {
+}
+
+.unit {
     display: block;
     font-size: 1em;
     color: #666;
     margin-top: 5px;
-  }
-  
-  .pricing-features {
+}
+
+.pricing-features {
     list-style: none;
     padding: 0;
     margin: 30px 0;
     text-align: left;
     min-height: 200px;
-  }
-  
-  .pricing-features li {
+}
+
+.pricing-features li {
     padding: 10px 0;
     color: #666;
     display: flex;
     align-items: center;
     gap: 10px;
-  }
-  
-  .pricing-features i {
+}
+
+.pricing-features i {
     color: #0066cc;
     font-size: 0.9em;
-  }
-  
-  .pricing-cta {
+}
+
+.pricing-cta {
     display: inline-block;
     padding: 12px 30px;
     background: rgba(0,102,204,0.1);
@@ -624,70 +634,130 @@ body {
     border-radius: 25px;
     font-weight: 500;
     transition: all 0.3s ease;
-  }
-  
-  .pricing-cta:hover {
+}
+
+.pricing-cta:hover {
     background: #0066cc;
     color: #fff;
     transform: translateY(-3px);
-  }
-  
-  .pricing-cta.featured {
+}
+
+.pricing-cta.featured {
     background: #0066cc;
     color: #fff;
-  }
-  
-  .pricing-cta.featured:hover {
+}
+
+.pricing-cta.featured:hover {
     background: #0077ed;
     box-shadow: 0 5px 15px rgba(0,102,204,0.3);
-  }
-  
-  @media (max-width: 1200px) {
+}
+
+@media (max-width: 1200px) {
     .pricing-cards {
-      max-width: 900px;
+        max-width: 900px;
     }
-  }
-  
-  @media (max-width: 992px) {
+}
+
+@media (max-width: 992px) {
     .pricing-cards {
-      flex-direction: column;
-      align-items: center;
+        flex-direction: column;
+        align-items: center;
     }
     
     .pricing-card {
-      width: 100%;
-      max-width: 400px;
+        width: 100%;
+        max-width: 400px;
     }
     
     .pricing-card.featured {
-      transform: none;
+        transform: none;
     }
     
     .pricing-features {
-      min-height: auto;
+        min-height: auto;
     }
-  }
-  
-  /* 고객 후기 */
-  .testimonials {
+
+    /* 모바일 메뉴 항목 */
+    .nav-menu-items {
+        padding: 15px 0;
+        flex: 1;
+        overflow-y: auto;
+    }
+
+    .nav-links a {
+        padding: 15px 20px;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        font-size: 1.05rem;
+        display: flex;
+        align-items: center;
+    }
+
+    .nav-links a:hover {
+        background: rgba(0, 102, 204, 0.05);
+        color: #0066cc;
+    }
+
+    /* 모바일 카카오톡 버튼 */
+    .nav-cta-wrapper {
+        padding: 1rem;
+        background: #f8f9fa;
+        border-top: 1px solid rgba(0,0,0,0.08);
+    }
+
+    .nav-links a.nav-cta {
+        margin: 0;
+        padding: 0.8rem 1.5rem;
+        width: 100%;
+        text-align: center;
+        justify-content: center;
+        box-sizing: border-box;
+    }
+
+    .nav-title {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #333;
+        text-align: center;
+        width: 100%;
+    }
+
+    .nav-menu-items {
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+        width: 100%;
+        padding-top: 1rem;
+    }
+
+    .nav-menu-items a {
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+    }
+}
+
+/* 고객 후기 */
+.testimonials {
     background: #fff;
     padding: 100px 0;
-  }
-  .testimonials-slider {
+}
+.testimonials-slider {
     position: relative;
     max-width: 1200px;
     margin: 0 auto;
     overflow: hidden;
     padding: 20px 0;
-  }
-  
-  .testimonials-track {
+}
+
+.testimonials-track {
     display: flex;
     transition: transform 0.5s ease;
     gap: 30px;
-  }
-  
-  .testimonial-item {
+}
+
+.testimonial-item {
     flex: 0 0 calc(33.333% - 20px);
     min-width: calc(33.333% - 20px);
     background: #fff;
@@ -695,36 +765,36 @@ body {
     padding: 30px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     transition: all 0.3s ease;
-  }
-  
-  .testimonial-item:hover {
+}
+
+.testimonial-item:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-  }
-  
-  .testimonial-header {
+}
+
+.testimonial-header {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-  }
-  .testimonial-image {
+}
+.testimonial-image {
     width: 60px;
     height: 60px;
     border-radius: 50%;
     margin-right: 15px;
     object-fit: cover;
-  }
-  .testimonial-info h4 {
+}
+.testimonial-info h4 {
     margin: 0;
     font-size: 1.1em;
     color: #333;
-  }
-  .rating {
+}
+.rating {
     color: #ffd700;
     margin-top: 5px;
-  }
-  
-  .slider-controls {
+}
+
+.slider-controls {
     position: absolute;
     top: 50%;
     left: 0;
@@ -734,9 +804,9 @@ body {
     justify-content: space-between;
     pointer-events: none;
     padding: 0 20px;
-  }
-  
-  .slider-btn {
+}
+
+.slider-btn {
     width: 50px;
     height: 50px;
     border-radius: 50%;
@@ -751,96 +821,96 @@ body {
     font-size: 1.2em;
     transition: all 0.3s ease;
     pointer-events: auto;
-  }
-  
-  .slider-btn:hover {
+}
+
+.slider-btn:hover {
     background: #0066cc;
     color: #fff;
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(0,102,204,0.2);
-  }
-  
-  .slider-btn:disabled {
+}
+
+.slider-btn:disabled {
     opacity: 0.5;
     cursor: not-allowed;
     transform: none;
-  }
-  
-  @media (max-width: 992px) {
+}
+
+@media (max-width: 992px) {
     .testimonial-item {
-      flex: 0 0 calc(50% - 15px);
-      min-width: calc(50% - 15px);
+        flex: 0 0 calc(50% - 15px);
+        min-width: calc(50% - 15px);
     }
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .testimonial-item {
-      flex: 0 0 100%;
-      min-width: 100%;
+        flex: 0 0 100%;
+        min-width: 100%;
     }
     
     .slider-controls {
-      padding: 0 10px;
+        padding: 0 10px;
     }
     
     .slider-btn {
-      width: 40px;
-      height: 40px;
-      font-size: 1em;
+        width: 40px;
+        height: 40px;
+        font-size: 1em;
     }
-  }
-  
-  /* FAQ 섹션 */
-  .faq {
+}
+
+/* FAQ 섹션 */
+.faq {
     background: #fff;
     padding: 80px 0;
-  }
-  .faq-list {
+}
+.faq-list {
     max-width: 800px;
     margin: 40px auto;
-  }
-  .faq-item {
+}
+.faq-item {
     border: 1px solid #eee;
     border-radius: 15px;
     margin-bottom: 20px;
     overflow: hidden;
-  }
-  .faq-question {
+}
+.faq-question {
     padding: 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  .faq-question:hover {
+}
+.faq-question:hover {
     background-color: #f5f5f7;
-  }
-  .faq-question h3 {
+}
+.faq-question h3 {
     margin: 0;
     font-size: 1.1rem;
     color: #333;
-  }
-  .faq-answer {
+}
+.faq-answer {
     padding: 0 20px;
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.3s ease, padding 0.3s ease;
-  }
-  .faq-item.active .faq-answer {
+}
+.faq-item.active .faq-answer {
     padding: 20px;
     max-height: 500px;
-  }
-  
-  /* 진행 절차 섹션 */
-  .process {
+}
+
+/* 진행 절차 섹션 */
+.process {
     background: #fff;
     padding: 60px 0 100px;
     position: relative;
     overflow: hidden;
-  }
+}
 
-  .process::before {
+.process::before {
     content: '';
     position: absolute;
     top: 0;
@@ -848,9 +918,9 @@ body {
     right: 0;
     height: 150px;
     background: linear-gradient(180deg, #f5f7ff 0%, #fff 100%);
-  }
+}
 
-  .process-flow {
+.process-flow {
     display: flex;
     gap: 30px;
     justify-content: center;
@@ -860,12 +930,12 @@ body {
     margin-left: auto;
     margin-right: auto;
     padding: 0 20px;
-  }
+}
 
-  .process-item {
+.process-item {
     background: #fff;
     border-radius: 20px;
-    padding: 25px;
+    padding: 25px 20px;
     flex: 1;
     min-width: 200px;
     max-width: 280px;
@@ -874,15 +944,9 @@ body {
     position: relative;
     box-shadow: 0 10px 30px rgba(0,0,0,0.05);
     border: 1px solid rgba(0,102,204,0.1);
-  }
+}
 
-  .process-item:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 40px rgba(0,102,204,0.1);
-    border-color: rgba(0,102,204,0.2);
-  }
-
-  .process-icon {
+.process-icon {
     width: 80px;
     height: 80px;
     background: #fff;
@@ -896,16 +960,15 @@ body {
     font-size: 1.8em;
     transition: all 0.3s ease;
     position: relative;
-  }
+}
 
-  .process-item:hover .process-icon {
-    transform: scale(1.1);
-    background: linear-gradient(135deg, #0066cc, #00c2ff);
-    color: #fff;
-    box-shadow: 0 15px 35px rgba(0,102,204,0.2);
-  }
+.process-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,102,204,0.1);
+    border-color: rgba(0,102,204,0.2);
+}
 
-  .process-number {
+.process-number {
     position: absolute;
     top: -10px;
     right: -10px;
@@ -920,297 +983,231 @@ body {
     justify-content: center;
     border: 2px solid #fff;
     box-shadow: 0 5px 15px rgba(0,102,204,0.2);
-  }
+}
 
-  .process-content h3 {
+.process-content h3 {
     font-size: 1.3em;
     margin-bottom: 10px;
     color: #333;
     font-weight: 600;
-  }
+}
 
-  .process-content p {
+.process-content p {
     font-size: 0.95em;
     color: #666;
     line-height: 1.6;
     margin: 0;
-  }
+}
 
-  .process-arrow {
+.process-arrow {
     display: flex;
     align-items: center;
     justify-content: center;
     color: #0066cc;
-    font-size: 1.2em;
+    font-size: 1.6em;
     position: absolute;
-    right: -45px;
+    right: -22px;
     top: 50%;
     transform: translateY(-50%);
     z-index: 1;
-    animation: arrowPulse 2s infinite;
-  }
+    animation: arrowPulse 2s infinite ease-in-out;
+}
 
-  @keyframes arrowPulse {
-    0% {
-      transform: translateY(-50%) translateX(0);
+@keyframes arrowPulse {
+    0%, 100% {
+        transform: translateY(-50%) translateX(0);
     }
     50% {
-      transform: translateY(-50%) translateX(5px);
+        transform: translateY(-50%) translateX(5px);
     }
-    100% {
-      transform: translateY(-50%) translateX(0);
-    }
-  }
+}
 
-  .process-cta-wrapper {
-    text-align: center;
-    margin-top: 80px;
-    padding-bottom: 20px;
-    position: relative;
-  }
+.process-item:last-child .process-arrow {
+    display: none;
+}
 
-  .process-cta {
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    background: #FEE500;
-    color: #fff;
-    padding: 20px 40px;
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: all 0.3s ease;
-    box-shadow: 0 10px 30px rgba(254, 229, 0, 0.2);
-    position: relative;
-    overflow: hidden;
-  }
-
-  .kakao-btn {
-    color: #3A1D1D;
-    font-size: 1.1em;
-    padding: 18px 35px;
-  }
-
-  .kakao-icon {
-    background: rgba(0, 0, 0, 0.1);
-    width: 32px;
-    height: 32px;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-  }
-
-  .btn-effect {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
-    opacity: 0;
-    transition: opacity 0.3s ease;
-    pointer-events: none;
-  }
-
-  .process-cta:hover {
-    background: #FFE812;
-    transform: translateY(-3px);
-    box-shadow: 0 15px 40px rgba(254, 229, 0, 0.4);
-  }
-
-  .process-cta:hover .kakao-icon {
-    transform: rotate(15deg);
-    background: rgba(0, 0, 0, 0.15);
-  }
-
-  .process-cta:hover .btn-effect {
-    animation: btnEffect 0.8s ease;
-  }
-
-  @keyframes btnEffect {
-    0% {
-      opacity: 0;
-      transform: scale(0);
-    }
-    50% {
-      opacity: 0.5;
-      transform: scale(1.5);
-    }
-    100% {
-      opacity: 0;
-      transform: scale(2);
-    }
-  }
-
-  /* 버튼 호버 시 물결 효과 */
-  .process-cta::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 150%;
-    height: 150%;
-    background: rgba(255, 255, 255, 0.2);
-    transform: translate(-50%, -50%) scale(0);
-    border-radius: 50%;
-    opacity: 0;
-    transition: transform 0.6s ease-out, opacity 0.6s ease-out;
-  }
-
-  .process-cta:active::after {
-    transform: translate(-50%, -50%) scale(1);
-    opacity: 1;
-    transition: 0s;
-  }
-
-  @media (max-width: 768px) {
-    .process {
-      padding: 40px 0 80px;
-    }
-    
-    .process-cta-wrapper {
-      margin-top: 60px;
-      padding-bottom: 15px;
-    }
-    
-    .process-cta {
-      padding: 18px 30px;
-    }
-
-    .kakao-btn {
-      font-size: 1em;
-      padding: 15px 25px;
-    }
-
-    .kakao-icon {
-      width: 28px;
-      height: 28px;
-    }
-  }
-
-  @media (max-width: 1200px) {
+@media (max-width: 992px) {
     .process-flow {
-      max-width: 900px;
-    }
-  }
-
-  @media (max-width: 992px) {
-    .process-flow {
-      flex-direction: column;
-      align-items: center;
-      gap: 40px;
+        flex-direction: column;
+        align-items: center;
+        gap: 45px;
     }
 
     .process-item {
-      max-width: 400px;
-      width: 100%;
+        max-width: 400px;
+        width: 100%;
+        margin-bottom: 25px;
+        position: relative;
     }
 
     .process-arrow {
-      transform: rotate(90deg);
-      right: auto;
-      top: auto;
-      bottom: -45px;
+        right: auto;
+        bottom: -32px;
+        left: 50%;
+        top: auto;
+        transform: translateX(-50%) rotate(90deg);
+        animation: arrowBounceVertical 2s infinite ease-in-out;
     }
 
-    @keyframes arrowPulse {
-      0% {
-        transform: rotate(90deg) translateX(0);
-      }
-      50% {
-        transform: rotate(90deg) translateX(5px);
-      }
-      100% {
-        transform: rotate(90deg) translateX(0);
-      }
+    @keyframes arrowBounceVertical {
+        0%, 100% {
+            transform: translateX(-50%) rotate(90deg) translateY(0);
+        }
+        50% {
+            transform: translateX(-50%) rotate(90deg) translateY(5px);
+        }
     }
-  }
-  
-  /* 연락 폼 */
-  .contact {
+}
+
+@media (max-width: 768px) {
+    .process-flow {
+        gap: 40px;
+        padding: 0 12px;
+    }
+
+    .process-item {
+        padding: 25px 20px;
+        margin-bottom: 20px;
+        background: linear-gradient(to bottom, #fff, #f8f9fa);
+        border: 1px solid rgba(0,102,204,0.15);
+    }
+
+    .process-icon {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 20px;
+        background: linear-gradient(135deg, #f8f9fa, #fff);
+    }
+
+    .process-content {
+        padding: 0 10px;
+    }
+
+    .process-content h3 {
+        color: #0066cc;
+        margin-bottom: 12px;
+        font-size: 1.4em;
+    }
+
+    .process-content p {
+        color: #555;
+        line-height: 1.7;
+        font-size: 1em;
+    }
+
+    .process-number {
+        width: 28px;
+        height: 28px;
+        font-size: 0.9em;
+        font-weight: 600;
+        background: linear-gradient(135deg, #0066cc, #00c2ff);
+    }
+
+    .process-arrow {
+        bottom: -28px;
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    .process-flow {
+        gap: 35px;
+    }
+
+    .process-item {
+        padding: 20px;
+        margin-bottom: 18px;
+    }
+
+    .process-arrow {
+        bottom: -25px;
+        font-size: 1.3em;
+    }
+}
+
+/* 연락 폼 */
+.contact {
     background: #fff;
     padding: 80px 0;
-  }
-  .contact form {
+}
+.contact form {
     max-width: 600px;
     margin: auto;
     display: flex;
     flex-direction: column;
-  }
-  .contact label {
+}
+.contact label {
     margin: 10px 0 5px;
     font-weight: 600;
     color: #333;
-  }
-  .contact input,
-  .contact textarea {
+}
+.contact input,
+.contact textarea {
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 1em;
-  }
-  .contact input:focus,
-  .contact textarea:focus {
+}
+.contact input:focus,
+.contact textarea:focus {
     outline: none;
     border-color: #0066cc;
-  }
-  .contact button {
+}
+.contact button {
     margin-top: 20px;
-  }
-  
-  /* 푸터 */
-  .footer {
+}
+
+/* 푸터 */
+.footer {
     background: #333;
     color: #fff;
     text-align: center;
     padding: 20px 0;
-  }
-  
-  /* 그래프 스타일 */
-  .graph-container {
+}
+
+/* 그래프 스타일 */
+.graph-container {
     background: rgba(0, 0, 0, 0.2);
     border-radius: 15px;
     padding: 30px;
     margin-bottom: 50px;
     flex: 1 1 60%;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-  }
-  
-  .graph-header {
+}
+
+.graph-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-bottom: 30px;
-  }
-  
-  .graph-header h3 {
+}
+
+.graph-header h3 {
     color: #fff;
     font-size: 1.4em;
     margin: 0;
-  }
-  
-  .graph-legend {
+}
+
+.graph-legend {
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.9em;
-  }
-  
-  .graph-content {
+}
+
+.graph-content {
     position: relative;
     height: 300px;
     padding: 30px 0;
-  }
-  
-  .graph-bars {
+}
+
+.graph-bars {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     height: 100%;
     gap: 20px;
-  }
-  
-  .graph-bar {
+}
+
+.graph-bar {
     flex: 1;
     display: flex;
     flex-direction: column;
@@ -1218,9 +1215,9 @@ body {
     height: 100%;
     position: relative;
     padding-bottom: 30px;
-  }
-  
-  .bar-fill {
+}
+
+.bar-fill {
     width: 100%;
     background: linear-gradient(0deg, #00c2ff 0%, rgba(0, 194, 255, 0.5) 100%);
     border-radius: 8px 8px 0 0;
@@ -1228,9 +1225,9 @@ body {
     height: 0;
     position: absolute;
     bottom: 30px;
-  }
-  
-  .bar-value {
+}
+
+.bar-value {
     color: #fff;
     font-weight: 600;
     position: absolute;
@@ -1238,137 +1235,143 @@ body {
     opacity: 0;
     transform: translateY(-20px);
     transition: all 0.5s ease;
-  }
-  
-  .bar-label {
+}
+
+.bar-label {
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.9em;
     position: absolute;
     bottom: 0;
     padding: 10px 0 0;
-  }
-  
-  .graph-bar.animate .bar-fill {
+}
+
+.graph-bar.animate .bar-fill {
     height: var(--height);
-  }
-  
-  .graph-bar.animate .bar-value {
+}
+
+.graph-bar.animate .bar-value {
     opacity: 1;
     transform: translateY(0);
-  }
-  
-  /* 반응형 */
-  @media (max-width: 768px) {
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
     .container,
     .section-header,
     .service-items,
     .success-stats,
     .pricing-cards,
     .process-flow {
-      padding-left: 20px;
-      padding-right: 20px;
+        padding-left: 20px;
+        padding-right: 20px;
     }
 
     .services,
     .success,
     .pricing,
     .process {
-      padding: 60px 0;
+        padding: 60px 0;
     }
 
     .section-header {
-      margin-bottom: 40px;
+        margin-bottom: 40px;
     }
 
     .section-header h2 {
-      font-size: 2em;
-      margin-bottom: 15px;
+        font-size: 2em;
+        margin-bottom: 15px;
     }
 
     .service-item {
-      flex: 1 1 100%;
-      max-width: 100%;
-      margin: 0 auto;
+        flex: 1 1 100%;
+        max-width: 100%;
+        margin: 0 auto;
     }
 
     .success-stats {
-      gap: 25px;
+        gap: 25px;
     }
 
     .graph-container {
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.05);
+        padding: 20px;
+        background: rgba(255, 255, 255, 0.05);
     }
 
     .pricing-cards {
-      flex-direction: column;
-      align-items: center;
-      gap: 25px;
-      padding: 0 10px;
-      margin-top: 20px;
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+        padding: 0 8px;
+        margin-top: 20px;
     }
 
     .pricing-card {
-      width: 100%;
-      max-width: calc(100% - 20px);
-      margin: 0 auto;
-      padding: 30px 20px;
-      box-sizing: border-box;
+        width: 100%;
+        max-width: calc(100% - 16px);
+        margin: 0 auto;
+        padding: 30px 20px;
+        box-sizing: border-box;
+        border-radius: 15px;
     }
 
     .process-flow {
-      gap: 30px;
+        gap: 30px;
+        padding: 0 8px;
     }
 
     .process-item {
-      padding: 25px;
-      background: #fff;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        padding: 25px 20px;
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        width: 100%;
+        max-width: calc(100% - 16px);
+        margin: 0 auto;
+        box-sizing: border-box;
     }
 
     .header h1 {
-      font-size: 2.2em;
-      line-height: 1.3;
-      padding: 0 20px;
-      word-break: keep-all;
+        font-size: 2.2em;
+        line-height: 1.3;
+        padding: 0 20px;
+        word-break: keep-all;
     }
     .success-graph {
-      height: 300px;
+        height: 300px;
     }
     .graph-content {
-      height: 250px;
+        height: 250px;
     }
     .graph-bars {
-      gap: 10px;
+        gap: 10px;
     }
     .bar-label {
-      font-size: 0.8em;
-      padding: 10px 0 0;
+        font-size: 0.8em;
+        padding: 10px 0 0;
     }
     .header h1 span {
-      margin-bottom: 10px;
+        margin-bottom: 10px;
     }
     .header h1 span:last-child {
-      margin-bottom: 0;
+        margin-bottom: 0;
     }
-  }
-  
-  /* 바 그래프 호버 효과 */
-  .graph-bar:hover .bar-fill {
+}
+
+/* 바 그래프 호버 효과 */
+.graph-bar:hover .bar-fill {
     background: linear-gradient(0deg, #00e1ff 0%, rgba(0, 225, 255, 0.6) 100%);
     box-shadow: 0 0 20px rgba(0, 194, 255, 0.3);
-  }
-  
-  .header-stats {
+}
+
+.header-stats {
     display: flex;
     justify-content: center;
     gap: 40px;
     margin: 60px 0 40px;
     padding: 20px;
-  }
-  
-  .stat-item {
+}
+
+.stat-item {
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -1376,241 +1379,406 @@ body {
     padding: 25px 35px;
     text-align: center;
     transition: all 0.3s ease;
-  }
-  
-  .stat-item:hover {
+}
+
+.stat-item:hover {
     transform: translateY(-10px);
     background: rgba(255, 255, 255, 0.15);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  }
-  
-  .stat-number {
+}
+
+.stat-number {
     font-size: 3.2em;
     font-weight: 700;
     color: #fff;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
     display: inline-block;
-  }
-  
-  .stat-symbol {
+}
+
+.stat-symbol {
     font-size: 2em;
     font-weight: 600;
     color: #00c2ff;
     margin-left: 5px;
-  }
-  
-  .stat-label {
+}
+
+.stat-label {
     display: block;
     font-size: 1.1em;
     color: rgba(255, 255, 255, 0.9);
     margin-top: 10px;
     font-weight: 500;
-  }
-  
-  @media (max-width: 768px) {
+}
+
+@media (max-width: 768px) {
     .header-stats {
-      flex-direction: column;
-      align-items: center;
-      gap: 15px;
-      margin: 40px 0 30px;
-      padding: 10px;
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+        margin: 40px 0 30px;
+        padding: 10px;
     }
     
     .stat-item {
-      width: 90%;
-      max-width: 300px;
-      padding: 20px;
+        width: 90%;
+        max-width: 300px;
+        padding: 20px;
     }
     
     .stat-number {
-      font-size: 2.8em;
+        font-size: 2.8em;
     }
     
     .stat-symbol {
-      font-size: 1.8em;
+        font-size: 1.8em;
     }
-  }
-  
-  @media (max-width: 480px) {
+}
+
+@media (max-width: 480px) {
     .container,
     .section-header,
     .service-items,
     .success-stats,
     .pricing-cards,
     .process-flow {
-      padding-left: 16px;
-      padding-right: 16px;
+        padding-left: 16px;
+        padding-right: 16px;
     }
 
-    .nav-links a {
-      padding: 1rem 1.5rem;
-      font-size: 1.1em;
-    }
-
-    .section-header h2 {
-      font-size: 1.8em;
-    }
-
-    .service-text {
-      padding: 20px 15px;
-    }
-
-    .process-item {
-      padding: 20px;
-    }
-
-    .process-content h3 {
-      font-size: 1.3em;
-      margin-bottom: 10px;
-    }
-
-    .header h1 {
-      font-size: 1.8em;
-      padding: 0 16px;
-    }
-
-    .header h1 span {
-      margin-bottom: 8px;
-    }
-  }
-  
-  /* 모바일 메뉴 버튼 */
-  .mobile-menu-btn {
-    display: none;
-    background: none;
-    border: none;
-    color: #333;
-    cursor: pointer;
-    padding: 8px;
-  }
-
-  .menu-icon {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-  }
-
-  .menu-icon i {
-    font-size: 1.8rem;
-  }
-
-  @media (max-width: 992px) {
     .main-nav .container {
-      padding: 0 20px;
-    }
-
-    .mobile-menu-btn {
-      display: block;
-      margin-left: auto;
-      transition: all 0.3s ease;
-      padding: 8px 0;
-    }
-
-    .nav-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px;
-      border-bottom: 1px solid rgba(0,0,0,0.1);
-    }
-
-    .nav-title {
-      font-size: 1.2em;
-      font-weight: 600;
-    }
-
-    .close-menu {
-      background: none;
-      border: none;
-      font-size: 1.8em;
-      color: #333;
-      cursor: pointer;
-      padding: 10px;
-      width: 44px;
-      height: 44px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: all 0.3s ease;
-    }
-
-    .close-menu:hover {
-      color: #0066cc;
-      transform: rotate(90deg);
-    }
-
-    .nav-links {
-      position: fixed;
-      top: 0;
-      right: 0;
-      width: 280px;
-      height: 100vh;
-      background: #fff;
-      padding: 0;
-      flex-direction: column;
-      transform: translateX(100%);
-      opacity: 1;
-      visibility: visible;
-      transition: transform 0.3s ease-in-out;
-      z-index: 1001;
-      box-shadow: -5px 0 15px rgba(0,0,0,0.1);
-    }
-
-    .nav-links.active {
-      transform: translateX(0);
-    }
-
-    .nav-links a {
-      padding: 15px 20px;
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      font-size: 1.1em;
-      transition: background-color 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      background-color: rgba(0,0,0,0.02);
-    }
-
-    .nav-links a.nav-cta {
-      margin: 20px;
-      padding: 12px 24px;
-      border: none;
-      text-align: center;
-      justify-content: center;
-      width: calc(100% - 40px);
-      box-sizing: border-box;
-    }
-  }
-
-  @media (max-width: 480px) {
-    .main-nav .container {
-      padding: 0 16px;
+        padding: 0 16px;
     }
 
     .logo {
-      font-size: 1.5rem;
+        font-size: 1.5rem;
     }
 
     .nav-links {
-      width: 100%;
+        width: 100%;
     }
-  }
-  
-  /* 모바일 줄바꿈 */
-  .mobile-only {
+
+    .section-header h2 {
+        font-size: 1.8em;
+    }
+
+    .service-text {
+        padding: 20px 15px;
+    }
+
+    .process-item {
+        padding: 20px;
+    }
+
+    .process-content h3 {
+        font-size: 1.3em;
+        margin-bottom: 10px;
+    }
+
+    .header h1 {
+        font-size: 1.8em;
+        padding: 0 16px;
+    }
+
+    .header h1 span {
+        margin-bottom: 8px;
+    }
+}
+
+/* 5. 모바일 메뉴 버튼 */
+.mobile-menu-btn {
     display: none;
-  }
-  
-  @media (max-width: 768px) {
-    .mobile-only {
-      display: block;
+    background: none;
+    border: none;
+    padding: 8px;
+    cursor: pointer;
+}
+
+.menu-icon {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-icon i {
+    font-size: 1.8rem;
+    color: #333;
+}
+
+/* 6. 모바일 스타일 */
+@media (max-width: 992px) {
+    .mobile-menu-btn {
+        display: block;
     }
-  }
+
+    .nav-links {
+        position: fixed;
+        top: 0;
+        right: -100%;
+        width: 300px;
+        height: 100vh;
+        background: #fff;
+        flex-direction: column;
+        padding: 0;
+        transition: all 0.3s ease-in-out;
+        box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+        z-index: 1001;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    /* 모바일에서만 닫기 버튼 표시 */
+    .close-menu {
+      display: none;  /* 기본적으로 숨김 */
+    }
   
-  /* 네비게이션 닫기 버튼 - PC에서 숨김 */
+    @media (max-width: 992px) {
+        .close-menu {
+            display: flex;  /* 모바일에서만 표시 */
+            visibility: visible;
+            opacity: 1;
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: none;
+            border: none;
+            color: #333;
+            font-size: 1.5rem;
+            width: 40px;
+            height: 40px;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            z-index: 2;
+        }
+    }
+  
+
+    .close-menu:hover {
+        color: #0066cc;
+        transform: rotate(90deg);
+    }
+
+    /* 메뉴 항목 스타일 */
+    .nav-menu-items {
+        padding-top: 4rem;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav-menu-items a {
+        padding: 1rem 1.5rem;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+        color: #333;
+        font-weight: 500;
+        transition: all 0.3s ease;
+    }
+
+    .nav-menu-items a:hover {
+        background: rgba(0, 102, 204, 0.05);
+        color: #0066cc;
+    }
+}
+
+/* 7. 모바일 작은 화면 대응 */
+@media (max-width: 480px) {
+    .main-nav .container {
+        padding: 0 16px;
+    }
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .nav-links {
+        width: 100%;
+    }
+
+    .nav-header {
+        padding: 1rem;
+    }
+
+    .nav-title {
+        font-size: 1.1rem;
+    }
+
+    .nav-menu-items a {
+        padding: 0.9rem 1.2rem;
+        font-size: 1rem;
+    }
+
+    .nav-cta-wrapper {
+        padding: 0.8rem;
+    }
+
+    .nav-links a.nav-cta {
+        padding: 0.8rem 1.2rem;
+    }
+}
+
+/* 모바일 메뉴 헤더 (PC에서는 숨김) */
+.nav-header {
+  display: none;  /* 기본적으로 숨김 */
+}
+
+@media (max-width: 992px) {
   .nav-header {
-    display: none;
+    display: flex;  /* 모바일에서만 표시 */
+    justify-content: center;
+    align-items: center;
+    padding: 1.2rem;
+    background: #f8f9fa;
+    border-bottom: 1px solid rgba(0,0,0,0.08);
+    position: relative;
   }
+}
+
+/* 카카오톡 상담 버튼 */
+.process-cta-wrapper {
+  position: fixed;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+  z-index: 999;
+  width: auto;
+  text-align: center;
+}
+
+.process-cta.kakao-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #FEE500;
+  color: #000;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s ease;
+  margin: 0 auto;
+}
+
+.kakao-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+}
+
+.process-cta.kakao-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
+
+.btn-effect {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background: radial-gradient(circle, rgba(255,255,255,0.8) 0%, transparent 70%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: 50px;
+}
+
+.process-cta.kakao-btn:hover .btn-effect {
+  opacity: 1;
+}
+
+/* 모바일 대응 */
+@media (max-width: 768px) {
+  .process-cta-wrapper {
+    width: calc(100% - 40px);
+    max-width: 300px;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .process-cta.kakao-btn {
+    width: 100%;
+    padding: 0.9rem 1.5rem;
+    font-size: 0.95rem;
+    box-sizing: border-box;
+  }
+}
+
+/* 더 작은 화면 대응 */
+@media (max-width: 480px) {
+  .process-cta-wrapper {
+    width: calc(100% - 32px);
+    bottom: 16px;
+  }
+
+  .process-cta.kakao-btn {
+    padding: 0.8rem 1.2rem;
+  }
+}
+
+/* 닫기 버튼 - 기본적으로 완전히 숨김 */
+.close-menu {
+  display: none;
+  visibility: hidden;
+  opacity: 0;
+  position: absolute;
+}
+
+/* 모바일 스타일 */
+@media (max-width: 992px) {
+  .nav-links {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 300px;
+    height: 100vh;
+    background: #fff;
+    flex-direction: column;
+    padding: 0;
+    transition: all 0.3s ease-in-out;
+    box-shadow: -5px 0 15px rgba(0,0,0,0.1);
+    z-index: 1001;
+  }
+
+  .nav-links.active {
+    right: 0;
+  }
+
+  /* 모바일 메뉴가 활성화될 때만 닫기 버튼 표시 */
+  .nav-links.active .close-menu {
+    display: flex;
+    visibility: visible;
+    opacity: 1;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: none;
+    border: none;
+    color: #333;
+    font-size: 1.5rem;
+    width: 40px;
+    height: 40px;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 2;
+  }
+
+  .close-menu:hover {
+    color: #0066cc;
+    transform: rotate(90deg);
+  }
+}
   

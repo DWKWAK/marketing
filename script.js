@@ -185,38 +185,51 @@ document.addEventListener('DOMContentLoaded', function() {
   initTestimonialsSlider();
 });
 
-// 모바일 메뉴 토글
+// 모바일 메뉴 버튼 및 닫기 버튼 기능
 document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
   const navLinks = document.querySelector('.nav-links');
   const closeMenuBtn = document.querySelector('.close-menu');
   const body = document.body;
 
-  mobileMenuBtn.addEventListener('click', function() {
+  function toggleMenu() {
     navLinks.classList.toggle('active');
-    const icon = this.querySelector('i');
-    icon.classList.toggle('fa-bars');
-    icon.classList.toggle('fa-times');
     body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
-  });
+    
+    // 메뉴가 활성화될 때만 닫기 버튼 표시
+    if (navLinks.classList.contains('active') && window.innerWidth <= 992) {
+      closeMenuBtn.style.display = 'flex';
+      closeMenuBtn.style.visibility = 'visible';
+      closeMenuBtn.style.opacity = '1';
+    } else {
+      closeMenuBtn.style.display = 'none';
+      closeMenuBtn.style.visibility = 'hidden';
+      closeMenuBtn.style.opacity = '0';
+    }
+  }
 
-  // 닫기 버튼 클릭 이벤트
-  closeMenuBtn.addEventListener('click', function() {
+  function closeMenu() {
     navLinks.classList.remove('active');
-    const icon = mobileMenuBtn.querySelector('i');
-    icon.classList.add('fa-bars');
-    icon.classList.remove('fa-times');
     body.style.overflow = '';
-  });
+    closeMenuBtn.style.display = 'none';
+    closeMenuBtn.style.visibility = 'hidden';
+    closeMenuBtn.style.opacity = '0';
+  }
+
+  mobileMenuBtn.addEventListener('click', toggleMenu);
+  closeMenuBtn.addEventListener('click', closeMenu);
 
   // 메뉴 항목 클릭시 자동으로 닫기
   navLinks.addEventListener('click', function(e) {
     if (e.target.tagName === 'A') {
-      navLinks.classList.remove('active');
-      const icon = mobileMenuBtn.querySelector('i');
-      icon.classList.add('fa-bars');
-      icon.classList.remove('fa-times');
-      body.style.overflow = '';
+      closeMenu();
+    }
+  });
+
+  // 화면 크기 변경시 메뉴 상태 초기화
+  window.addEventListener('resize', function() {
+    if (window.innerWidth > 992) {
+      closeMenu();
     }
   });
 });

@@ -26,17 +26,15 @@
           </span>
         </button>
         <div class="nav-links">
-          <div class="nav-header">
-            <span class="nav-title">메뉴</span>
-            <button class="close-menu">
-              <i class="fas fa-times"></i>
-            </button>
+          <button class="close-menu">
+            <i class="fas fa-times"></i>
+          </button>
+          <div class="nav-menu-items">
+            <a href="#services">서비스</a>
+            <a href="#success">성공사례</a>
+            <a href="#pricing">가격</a>
+            <a href="#process">진행절차</a>
           </div>
-          <a href="#services">서비스</a>
-          <a href="#success">성공사례</a>
-          <a href="#pricing">가격</a>
-          <a href="#process">진행절차</a>
-          <a href="https://open.kakao.com/me/kwakpro" target="_blank" class="nav-cta">카카오톡 상담</a>
         </div>
       </div>
     </nav>
@@ -496,5 +494,34 @@
   </footer>
 
   <script src="script.js"></script>
+
+  <style>
+    @media (max-width: 480px) {
+      .main-nav .container {
+        padding: 0 16px;
+      }
+
+      .logo {
+        font-size: 1.5rem;
+      }
+
+      .nav-links {
+        width: 100%;
+      }
+
+      .nav-header {
+        padding: 0.8rem;
+      }
+
+      .nav-title {
+        font-size: 1.1rem;
+      }
+
+      .nav-links a {
+        padding: 0.9rem 1.2rem;
+        font-size: 1rem;
+      }
+    }
+  </style>
 </body>
 </html>
