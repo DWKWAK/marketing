@@ -189,16 +189,24 @@ document.addEventListener('DOMContentLoaded', function() {
 document.addEventListener('DOMContentLoaded', function() {
   const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
   const navLinks = document.querySelector('.nav-links');
+  const closeMenuBtn = document.querySelector('.close-menu');
   const body = document.body;
 
   mobileMenuBtn.addEventListener('click', function() {
     navLinks.classList.toggle('active');
-    // 메뉴 아이콘 변경
     const icon = this.querySelector('i');
     icon.classList.toggle('fa-bars');
     icon.classList.toggle('fa-times');
-    // 메뉴가 열렸을 때 스크롤 방지
     body.style.overflow = navLinks.classList.contains('active') ? 'hidden' : '';
+  });
+
+  // 닫기 버튼 클릭 이벤트
+  closeMenuBtn.addEventListener('click', function() {
+    navLinks.classList.remove('active');
+    const icon = mobileMenuBtn.querySelector('i');
+    icon.classList.add('fa-bars');
+    icon.classList.remove('fa-times');
+    body.style.overflow = '';
   });
 
   // 메뉴 항목 클릭시 자동으로 닫기
