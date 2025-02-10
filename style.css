@@ -99,6 +99,10 @@ body {
   .header h1 {
     font-size: 2.8em;
     margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
   }
   .header p {
     font-size: 1.2em;
@@ -1216,6 +1220,46 @@ body {
     
     .stat-symbol {
       font-size: 1.8em;
+    }
+  }
+  
+  .typing-text {
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: none;
+    animation: typing 2s steps(20);
+  }
+
+  .cursor {
+    font-weight: 300;
+    animation: blink 0.7s infinite;
+    margin-left: -5px;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @media (max-width: 768px) {
+    .header h1 {
+      font-size: 2.2em;
+    }
+    .typing-text {
+      animation: typing 3s steps(20);
     }
   }
   
